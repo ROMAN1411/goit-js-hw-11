@@ -1,0 +1,41 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 80px) / 4);
+  margin: 10px;
+  border: 1px solid #103538;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #7aaaa1;
+}
+
+.photo-card:not(:last-child) {
+  margin-right: 10px;
+}
+
+img {
+  display: block;
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+}
+
+div.info {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.info-item {
+  display: block;
+  font-size: 12px;
+}
+
+.info-item:not(:last-child) {
+  margin-right: 10px;
+}
