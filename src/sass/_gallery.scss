@@ -25,17 +25,14 @@ img {
   object-fit: cover;
 }
 
-div.info {
+.info {
   display: flex;
   flex-direction: row;
-  text-align: center;
 }
 
 .info-item {
-  display: block;
-  font-size: 12px;
-}
-
-.info-item:not(:last-child) {
-  margin-right: 10px;
+  font-size: 14px;
+  margin: 10px;
+  line-height: 1.5;
+  // text-align: center;
 }

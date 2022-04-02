@@ -4,7 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 Notiflix.Notify.init({
-    distance: '27px',
+    distance: '37px',
     width: '350px',
 });
 
@@ -51,7 +51,7 @@ function clearGallery() {
 
 function galleryCardsMarkup(items) {
     container.insertAdjacentHTML('beforeend', items);
-    // container.innerHTML = imgCardsTemplates(tempjates);
+    // container.innerHTML = imgCardsTemplates(templates);
 }
 
 
@@ -74,8 +74,8 @@ const onEntry = (entries) => {
     });
 }
 
-function imgCardsTemplates(tempjates) {
-    return tempjates
+function imgCardsTemplates(templates) {
+    return templates
         .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
             return `
             <div class="photo-card">     
