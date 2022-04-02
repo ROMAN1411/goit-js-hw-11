@@ -8,7 +8,6 @@ Notiflix.Notify.init({
     width: '350px',
 });
 
-
 const searchForm = document.querySelector('.search-form');
 const container = document.querySelector('.gallery');
 const btn = document.querySelector('[type="submit"]');
@@ -49,7 +48,6 @@ async function onSearch(evt) {
 function clearGallery() {
     container.innerHTML = '';
 }
-
 
 function galleryCardsMarkup(items) {
     container.insertAdjacentHTML('beforeend', items);
@@ -115,7 +113,7 @@ const observer = new IntersectionObserver(onEntry, options);
 observer.observe(loading);
 
 function infScroll() {
-    const { height: cardHeight } = document.querySelector('.card')
+    const { height: cardHeight } = document.querySelector('.photo-card')
         .firstElementChild.getBoundingClientRect();
     
     window.scrollBy({
