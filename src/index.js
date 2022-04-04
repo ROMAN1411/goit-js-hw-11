@@ -30,17 +30,22 @@ async function onSearch(evt) {
     imagesApiService.searchQuery = searchForm.searchQuery.value;
     const getImages = await imagesApiService.fetchImg();
 
- if (getImages.hits.length === 0) {
+    console.log(searchForm.searchQuery.value);
+
+    if (getImages.hits.length === 0) {
         Notiflix.Notify.failure(`Sorry, there are no images matching your search query. Please try again.`);
+
+    } else if (imagesApiService.searchQuery === "" || imagesApiService.searchQuery.charAt(0) === ' ') {
+        console.log('Пустое поле или пробел')
+        Notiflix.Notify.failure(`Please enter a valid request!`);
+        document.querySelector('.search-form').reset();
+        
     } else {
         Notiflix.Notify.success(`Hooray! We found ${getImages.totalHits} images`);
-        
         clearGallery();
         imagesApiService.resetPage();
-
         const galleryMarkup = imgCardsTemplates(getImages.hits);
         galleryCardsMarkup(galleryMarkup);
-
         lightbox.refresh();
     }
 }
